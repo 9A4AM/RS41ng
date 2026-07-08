@@ -1,17 +1,15 @@
-# Builds the web configurator (web/) and deploys it to GitHub Pages.
+# Builds the web firmware configurator (web/) and deploys it to GitHub Pages.
 #
 # One-time repo setup:
 #   Settings → Pages → Build and deployment → Source = "GitHub Actions".
 # The site is served at https://<owner>.github.io/<repo>/ — vite.config.ts uses
 # base "./" (relative paths) so it works from that subpath without further config.
 
-name: Deploy web configurator
+name: Deploy web firmware configurator
 
 on:
   push:
-    # TEMPORARY: web-configurator is included so Pages can be tested from the branch
-    # before merge. Revert to `branches: [main]` once verified.
-    branches: [main, web-configurator]
+    branches: [main]
     paths:
       - "web/**"
       - ".github/workflows/deploy-web.yml"
